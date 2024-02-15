@@ -21,5 +21,5 @@ vim.keymap.set("n", "<leader>h", ":vsplit<CR>")
 vim.keymap.set("n", "<leader>kj", ":split<CR>")
 
 -- C stuff
-vim.keymap.set("n", "<leader>R", ":!gcc -o test.out<CR>")
+vim.keymap.set("n", "<F8>", ":w <CR> :make %< <CR>")
 
