@@ -15,3 +15,7 @@ local opts = {}
 
 require("global_keymaps")
 require("lazy").setup("plugins")
+
+require("lazy").setup({
+  { 'codota/tabnine-nvim', build = "./dl_binaries.sh" },
+})

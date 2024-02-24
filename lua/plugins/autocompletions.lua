@@ -2,12 +2,28 @@ return {
   {
     "hrsh7th/cmp-nvim-lsp",
   },
+  {
+    "codota/tabnine-nvim",
+    config = function()
+      require("tabnine").setup({
+        disable_auto_comment = true,
+        accept_keymap = "<Tab>",
+        dismiss_keymap = "<C-]>",
+        debounce_ms = 800,
+        suggestion_color = { gui = "#808080", cterm = 244 },
+        exclude_filetypes = { "TelescopePrompt", "NvimTree" },
+        log_file_path = nil, -- absolute path to Tabnine log file
+      })
+    end
+  },
   { -- nvim-cmp
     "hrsh7th/nvim-cmp",
     config = function()
       -- Set up nvim-cmp.
       local cmp = require("cmp")
       require("luasnip/loaders/from_vscode").lazy_load()
+
+
 
       cmp.setup({
         snippet = {
